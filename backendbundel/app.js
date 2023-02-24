@@ -1,6 +1,6 @@
 import  express  from "express";  
 import { config } from "dotenv";
-// import ErrorMidilware from "./middlewares/Error.js";
+import ErrorMidilware from "./middlewares/Error.js";
 // import ErrorHandler from "./utils/errorHandler.js";
 import cookieParser from "cookie-parser";
 // import mongoose from "mongoose";
@@ -26,7 +26,7 @@ app.use(cookieParser());
 
 import course from "./routes/courseRoutes.js";
 import user from './routes/userRoutes.js'
-import ErrorMidilware from "./middlewares/Error.js";
+// import ErrorMidilware from "./middlewares/Error.js";
 
 
 

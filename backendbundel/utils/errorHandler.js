@@ -12,7 +12,8 @@ class ErrorHandler extends Error {
         super(massage);
         // this.massage = massage;
         this.statusCode = statusCode;
-
+        
+        console.log(massage);
     }
 }
 
