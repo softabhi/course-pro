@@ -5,8 +5,21 @@ import getDataUri from "../utils/dataUri.js";
 import cloudinary from 'cloudinary';
 // import  ErrorMidilware  from "../middlewares/Error.js";
 
+
 export const getAllCourses = catchAsyncError(async(req,res,next) =>{
-    const course = await Course.find().select("-lectures");
+    const keyword  = req.query.keyword || "";
+    const category  = req.query.category || "";
+
+    const course = await Course.find({
+        title:{
+            $regex:keyword,
+            $options:"i"
+        },
+        category:{
+            $regex:category,
+            $options:"i"
+        }
+    }).select("-lectures");
         res.status(200).json({
             success: true,
             course, 
